@@ -35,19 +35,19 @@ const QuestionCards=(props)=>{
 
     return(
         <>
-        <Card onClick={toggle}>
+        <Card class='FullQuestion' onClick={toggle}>
                  
-        <CardBody className='row' style={{padding:"10px"}} >
-             <div className="column" style={{width:"20%"}}>
+        <CardBody className='row bodyCardClass' >
+             <div className="column oneDiv">
 
              </div>
-                <div className='column' style={{width:"15%", padding:"2px",margin:"0px 10px"}}>
-              <img   src={props.question_data.author_avator} style={{width:"80%",height:"90%", alignSelf:"center"}} alt="Card image cap" />
+                <div className='column twoDiv' >
+              <img   src={props.question_data.author_avator} className='AuthorImage'  alt={props.question_data.author_name} />
             </div>
-                <div className='column'  style={{width:"50%"}} >
-                <CardTitle style={{margin:'0px' }}><strong>{props.question_data.title}</strong></CardTitle>
-                <CardSubtitle style={{margin:"10px 0px"}} >{props.question_data.author_name}</CardSubtitle>
-                <CardText className=" text-muted" style={{margin:' 5px 0px' }}> View Count: <b>{props.question_data.views}</b></CardText>
+                <div className='column bodyDiv'   >
+                <CardTitle className='CardTitleStyle'><strong>{props.question_data.title}</strong></CardTitle>
+                <CardSubtitle className="cardSubStyle" >{props.question_data.author_name}</CardSubtitle>
+                <CardText className=" text-muted" className="cardTextStyle "> View Count: <b>{props.question_data.views}</b></CardText>
 
                 </div>
                     </CardBody>
@@ -61,10 +61,10 @@ const QuestionCards=(props)=>{
                         Tags: {tagCubes}
                         <br />
                         <br/>
-                        <div className='column' style={{width:"50%",margin:"5px 0px 0px 0px"}}>  
+                        <div className='column viewCount'>  
                         View Count: <b>{props.question_data.views}</b>
                         </div>
-                        <div className='column' style={{width:"50%",textAlign:'center'}}>
+                        <div className='column answered' >
                             {answer}
 
                         </div>
@@ -72,12 +72,12 @@ const QuestionCards=(props)=>{
 
                         <br></br>
                        <hr></hr>
-                       <div className='column' style={{width:"20%",textAlign:''}}>
+                       <div className='column authIMG'>
                         <img   src={props.question_data.author_avator} style={{width:"70px",height:"70px", alignSelf:"center"}} alt="Card image cap" />
                        </div>
-                       <div className='column' style={{width:"50%",textAlign:''}}>
+                       <div className='column authName' >
                             <b>{props.question_data.author_name}</b>
-                            <p className=" text-muted" style={{fontSize:"14px"}}>Reputation:{props.question_data.auth_rep}</p>
+                            <p className=" text-muted rep" >Reputation:{props.question_data.auth_rep}</p>
                        </div>
 
                     </ModalBody>

@@ -22,3 +22,10 @@
     border-left: 2px solid black;
     height: 500px;
   }
+
+  .body{
+    overflow:hidden;
+    color: rgb(6, 7, 26);   
+  }
+
+  

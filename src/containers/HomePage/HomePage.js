@@ -4,6 +4,8 @@ import React, { useState,Component } from 'react';
   import axios from 'axios';
 
   import './HomePage.css';
+  
+  
 import QuestionCards from '../../components/QuestionCards/QuestionCards';
 
 
@@ -15,17 +17,6 @@ class HomePage extends Component{
     }
 
     
-    getQuestions(questions){
-        axios.get("https://api.stackexchange.com/2.2/questions?pagesize="+questions+"&order=desc&sort=hot&site=stackoverflow")
-        .then(response=>{
-            console.log(response['data']['items']);
-            var post_data=response['data']['items'];
-            this.setState({question_data:post_data,done:true});
-        })
-        .catch(error=>{
-            console.log(error);
-        })
-    }
     
     componentDidMount(){
         axios.get("https://api.stackexchange.com/2.2/questions?order=desc&sort=hot&site=stackoverflow")

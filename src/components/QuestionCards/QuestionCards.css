@@ -11,3 +11,70 @@
 .btn-sm:hover{
     cursor:default;
 }
+
+.bodyCardClass{
+    padding:10px
+}
+.oneDiv{
+    width: 20%;
+}
+
+.twoDiv{
+    width:15%;
+    padding: 2px;
+    margin: 0px 10px;
+}
+.bodyDiv{
+    width:50%;
+}
+.CardTitleStyle{
+    margin: 0px;
+}
+
+.cardSubStyle{
+    margin:10px 0px;
+}
+
+
+.cardTextStyle{
+    margin: 5px 0px;
+}
+
+.TagBlock{
+    width:50%;
+    margin:5px 0px 0px 0px;
+}
+.viewCount{
+    width: 50%;
+    margin:5px 0px 0px 0px;
+}
+
+.answered{
+    width: 50%;
+    text-align: center;
+}
+
+.authIMG{
+    width: 20%;
+    text-align: '';
+}
+
+.authName{
+    width: 50%;
+    text-align: '';
+}
+
+.rep{
+    font-size: 14px;
+}
+
+.AuthorImage{
+    width: 80%;
+    height: 90%;
+    align-self: center;
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: rgb(209, 218, 226);
+}

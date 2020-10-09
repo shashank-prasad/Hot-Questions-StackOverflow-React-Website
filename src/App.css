@@ -1,3 +1,7 @@
 .head{
     text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+    padding: 40px;
+    background-color: rgb(31, 105, 105);
 }
