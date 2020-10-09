@@ -3,8 +3,8 @@ The website was created with react . Using an public API call for the currently 
 
 
 To run the code
-1. Install all required modules
-npm install
+1. Install all required modules-
+ npm install
 
-2. Complie and run the code
+2. Complie and run the code- 
 npm start
