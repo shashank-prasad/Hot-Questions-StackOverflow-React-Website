@@ -1,0 +1,13 @@
+.answer:hover {
+    color: white !important;
+    text-decoration: none;
+    cursor: default;
+    }
+
+.tag:hover{
+    cursor:default;
+}
+
+.btn-sm:hover{
+    cursor:default;
+}

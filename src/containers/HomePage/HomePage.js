@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
+import React, { useState,Component } from 'react';
 //import {Card} from 'react-bootstrap'
 
   import axios from 'axios';
 
   import './HomePage.css';
 import QuestionCards from '../../components/QuestionCards/QuestionCards';
-import Example from '../../example';
-
 
 
 class HomePage extends Component{
     state={
         question_data:null,
-        done:false
+        done:false,
+        modal:false
+    }
+
+    
+    getQuestions(questions){
+        axios.get("https://api.stackexchange.com/2.2/questions?pagesize="+questions+"&order=desc&sort=hot&site=stackoverflow")
+        .then(response=>{
+            console.log(response['data']['items']);
+            var post_data=response['data']['items'];
+            this.setState({question_data:post_data,done:true});
+        })
+        .catch(error=>{
+            console.log(error);
+        })
     }
     
     componentDidMount(){
@@ -28,13 +40,18 @@ class HomePage extends Component{
     }
 
     
+    
     render(){
+
+
+
+       
+
         let card=null
         if(!this.state.done){
             card=<h3>Loading...</h3>
         }else{
             var data_obj=this.state.question_data;
-      
              console.log('type of ',typeof data_obj)
             var data_arr=[]
             for (const key of Object.keys(data_obj)) {
@@ -47,29 +64,30 @@ class HomePage extends Component{
                         'tags':data_obj[key]['tags'],
                         'views':data_obj[key]['view_count'],
                         "isanswered":data_obj[key]['is_answered'],
-                        "Q_id":data_obj[key]['question_id']
+                        "Q_id":data_obj[key]['question_id'],
+                        "auth_rep":data_obj[key]['owner']['reputation']
                     }
                 )
               }
             console.log("array",data_arr)
-           console.log('type of 2',typeof data_arr)
+           //console.log('type of 2',typeof data_arr)
 
            card= data_arr.map(question=>(
                <QuestionCards key={question.Q_id} question_data={question}></QuestionCards>
                    
                
            ))
-        // card=(
-        //     <div>HEllo</div>
-        //     )
+
         }
 
 
         
         return(
             <div style={{alignSelf:'center'}}>
+                  
             {card}
-            <Example></Example>            
+            
+            
             </div>
         )
     }
